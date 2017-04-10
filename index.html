@@ -4,12 +4,9 @@
 <!-- Head tag -->
 <head>
 
-    <!-- Title -->
-    
-    <title>OrangeIam</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
     <!--Description-->
     
@@ -19,11 +16,6 @@
     <!--Author-->
     
         <meta name="author" content="XuZilan">
-    
-
-    <!--Favicon-->
-    
-      <link rel="icon" href="images/favicon.ico">
     
 
     <!--Open Graph Title-->
@@ -37,19 +29,23 @@
         <meta property="og:image" content="undefined"/>
     
 
-
+    <!-- Title -->
+    
+    <title>OrangeIam</title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/sass/main.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
 
-    <!--[if lt IE 8]>
-        <script src="/js/ie/html5shiv.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!--[if lt IE 8]>
-        <link rel="stylesheet" href="/sass/ie8.css">
-    <![endif]-->
-
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 
     <!-- Google Analytics -->
     
@@ -57,156 +53,87 @@
 
 </head>
 
+<body>
 
-<body id="top">
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">OrangeIam</a>
+    </div><!-- end logo -->
 
-    <!-- Header -->
-    <header id="header">
-  <div class="inner">
-    <a href="/" class="image avatar"><img src="https://www.gravatar.com/avatar/d6d70d8be6c3a4e8c587c818dd425312" alt="" /></a>    <h1><strong>This is Strata</strong>, a free, fully responsive site<br />template designed by <a href="http://html5up.net">HTML5 UP</a>.</h1>
-  </div>
-</header>
-
-
-    <!-- Main -->
-		<div id="main">
-
-      <!-- Main Content -->
-        <!-- One -->
-  <section id="one">
-    <header class="major">
-      
-        <h2>I am orange</h2>
-      
-    </header>
-    
-      <p>abcdefd</p>
-    
-    <ul class="actions">
-      <li><a href="/page" class="button">Learn More</a></li>    </ul>
-  </section>
-
-  
-
-    <!-- Two -->
-    <section id="two">
-      <h2>Recent Work</h2>
-      <div class="row">
-        
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
             
-<article class="6u 12u$(xsmall) work-item">  <a href="http://placehold.it/1300x500" class="image fit thumb" ><img src="http://placehold.it/450x320" title="Hello World" alt=""  /></a>    <a href="/2017/04/08/hello-world/"><h3>Hello World</h3></a>
-  <p></p>
-</article>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
 
-        
-      </div>
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+                <li><a href="https://www.facebook.com/" class="fb" target="_blank" data-title="Facebook"></a></li>
+            
+            
+                <li><a href="https://www.behance.net/" class="behance" target="_blank" data-title="Behance"></a></li>
+            
+            
+                <li><a href="https://plus.google.com/+Pixelhint/posts" class="google" target="_blank" data-title="Google+"></a></li>
+            
+            
+                <li><a href="https://dribbble.com/pixelhint" class="dribble" target="_blank" data-title="Dribble"></a></li>
+            
+            
+        </ul><!-- end social -->
 
-  
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
 
+<!-- Main Content -->
+<section class="main clearfix">
     
-
-    <ul class="actions">
-      <li><a href="/archives" class="button">Archives</a></li>    </ul>
-  </section>
-
-
-      <!-- Three - the contact form is on every page! -->
-        <section id="three">
-          <h2>Get In Touch</h2>
-<p>Us a service like Google forms or formspree to modify this partial in _partials/contact-form.</p>
-<div class="row">
-  <div class="8u 12u$(small)">
-    <form method="post" action="#">
-      <div class="row uniform 50%">
-        <div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
-        <div class="6u$ 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
-        <div class="12u$"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-      </div>
-    </form>
-    <ul class="actions">
-      <li><input type="submit" value="Send Message" /></li>
-    </ul>
-  </div>
-  <div class="4u$ 12u$(small)">
-    <ul class="labeled-icons">
-      <li>
-        <h3 class="icon fa-home"><span class="label">Address</span></h3>
-        1234 Somewhere Rd.<br />
-        Nashville, TN 00000<br />
-        United States
-      </li>
-      <li>
-        <h3 class="icon fa-mobile"><span class="label">Phone</span></h3>
-        000-000-0000
-      </li>
-      <li>
-        <h3 class="icon fa-envelope-o"><span class="label">Email</span></h3>
-        <a href="#">hello@untitled.tld</a>
-      </li>
-    </ul>
-  </div>
+        <div class="work">
+    <a href="/2017/04/08/hello-world/">
+        <img src="http://placehold.it/450x450" class="media" alt=""/>
+        <div class="caption">
+            <div class="work_title">
+                <h1>Hello World</h1>
+            </div>
+        </div>
+    </a>
 </div>
-        </section>
+    
+    
+</section>
 
-        <!-- Footer -->
-<footer id="footer">
-    <div class="inner">
+<!-- After footer scripts -->
 
-        <ul class="icons">
-            
-                <li><a href="https://twitter.com/?lang=en" class="icon fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
-            
-            
-                <li><a href="https://www.facebook.com/" class="icon fa-facebook" target="_blank" ><span class="label">Facebook</span></a></li>
-            
-            
-                <li><a href="https://www.instagram.com/" class="icon fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
-            
-            
-                <li><a href="https://dribbble.com/" class="icon fa-dribbble" target="_blank" ><span class="label">Dribbble</span></a></li>
-            
-            
-                <li><a href="https://github.com/klugjo/hexo-theme-phantom/commits?author=klugjo" class="icon fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
-            
-            
-                <li><a href="https://plus.google.com/" class="icon fa-google-plus" target="_blank" ><span class="label">Google+</span></a></li>
-            
-            
-                <li><a href="https://www.behance.net/" class="icon fa-behance" target="_blank" ><span class="label">Behance</span></a></li>
-            
-            
-                <li><a href="https://500px.com/" class="icon fa-500px" target="_blank" ><span class="label">500px</span></a></li>
-            
-            
-                <li><a href="\#" class="icon fa-envelope-o" target="_blank" ><span class="label">Email</span></a></li>
-            
-            
-                <li><a href="\#" class="icon  fa-rss" target="_blank" ><span class="label">RSS</span></a></li>
-            
-        </ul>
+<!-- jQuery -->
+<script src="/js/jquery.js"></script>
 
-        <ul class="copyright">
-            <li>&copy; Untitled. All rights reserved</li>
-            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-            <li>Hexo: <a href="http://livingos.com/" target="_blank">Tim Hyde</a></li>
-        </ul>
-    </div>
-</footer>
+<!-- Custom Code -->
+<script src="/js/main.js"></script>
 
-        
-    </div>
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
-    <!-- After footer scripts -->
-      <!-- Scripts -->
-  <script src="/js/jquery.min.js"></script>  <script src="/js/jquery.poptrox.min.js"></script>  <script src="/js/skel.min.js"></script>  <script src="/js/util.js"></script>
-  <!--[if lte IE 8]>
-  <script src="/js/ie/respond.min.js"></script>
-  <![endif]-->
-
-  <script src="/js/main.js"></script>
-  <!-- Disqus Comments -->
-  
+<!-- Disqus Comments -->
 
 
 </body>
+
 </html>

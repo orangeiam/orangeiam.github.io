@@ -1,134 +1,80 @@
-/*
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+$(document).ready(function(){
 
-(function($) {
 
-	var settings = {
 
-		// Parallax background effect?
-			parallax: true,
+    //mobile menu toggling
+    $("#menu_icon").click(function(){
+        $("header nav ul").toggleClass("show_menu");
+        $("#menu_icon").toggleClass("close_menu");
+        return false;
+    });
 
-		// Parallax factor (lower = more intense, higher = less intense).
-			parallaxFactor: 20
+    
 
-	};
+    //Contact Page Map Centering
+    var hw = $('header').width() + 50;
+    var mw = $('#map').width();
+    var wh = $(window).height();
+    var ww = $(window).width();
 
-	skel.breakpoints({
-		xlarge: '(max-width: 1800px)',
-		large: '(max-width: 1280px)',
-		medium: '(max-width: 980px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)'
-	});
+    $('#map').css({
+        "max-width" : mw,
+        "height" : wh
+    });
 
-	$(function() {
+    if(ww>1100){
+         $('#map').css({
+            "margin-left" : hw
+        });
+    }
 
-		var $window = $(window),
-			$body = $('body'),
-			$header = $('#header'),
-			$footer = $('#footer'),
-			$main = $('#main');
+   
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
 
-			$window.on('load', function() {
-				$body.removeClass('is-loading');
-			});
 
-		// Touch?
-			if (skel.vars.mobile) {
+    //Tooltip
+    $("a").mouseover(function(){
 
-				// Turn on touch mode.
-					$body.addClass('is-touch');
+        var attr_title = $(this).attr("data-title");
 
-				// Height fix (mostly for iOS).
-					window.setTimeout(function() {
-						$window.scrollTop($window.scrollTop() + 1);
-					}, 0);
+        if( attr_title == undefined || attr_title == "") return false;
+        
+        $(this).after('<span class="tooltip"></span>');
 
-			}
+        var tooltip = $(".tooltip");
+        tooltip.append($(this).data('title'));
 
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+         
+        var tipwidth = tooltip.outerWidth();
+        var a_width = $(this).width();
+        var a_hegiht = $(this).height() + 3 + 4;
 
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
+        //if the tooltip width is smaller than the a/link/parent width
+        if(tipwidth < a_width){
+            tipwidth = a_width;
+            $('.tooltip').outerWidth(tipwidth);
+        }
 
-		// Footer.
-			skel.on('+medium', function() {
-				$footer.insertAfter($main);
-			});
+        var tipwidth = '-' + (tipwidth - a_width)/2;
+        $('.tooltip').css({
+            'left' : tipwidth + 'px',
+            'bottom' : a_hegiht + 'px'
+        }).stop().animate({
+            opacity : 1
+        }, 200);
+       
 
-			skel.on('-medium !medium', function() {
-				$footer.appendTo($header);
-			});
+    });
 
-		// Header.
+    $("a").mouseout(function(){
+        var tooltip = $(".tooltip");       
+        tooltip.remove();
+    });
 
-			// Parallax background.
 
-				// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-					if (skel.vars.browser == 'ie'
-					||	skel.vars.mobile)
-						settings.parallax = false;
+});
 
-				if (settings.parallax) {
 
-					skel.on('change', function() {
 
-						if (skel.breakpoint('medium').active) {
 
-							$window.off('scroll.strata_parallax');
-							$header.css('background-position', 'top left, center center');
 
-						}
-						else {
-
-							$header.css('background-position', 'left 0px');
-
-							$window.on('scroll.strata_parallax', function() {
-								$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
-							});
-
-						}
-
-					});
-
-					$window.on('load', function() {
-						$window.triggerHandler('scroll');
-					});
-
-				}
-
-		// Main Sections: Two.
-
-			// Lightbox gallery.
-				$window.on('load', function() {
-
-					$('#two').poptrox({
-						overlayColor: '#2c2c2c',
-						overlayOpacity: 0.85,
-						popupCloserText: '',
-						popupLoaderText: '',
-						selector: '.work-item a.image',
-						usePopupCaption: true,
-						usePopupDefaultStyling: false,
-						usePopupEasyClose: false,
-						usePopupNav: true,
-						windowMargin: (skel.breakpoint('small').active ? 0 : 50)
-					});
-
-				});
-
-	});
-
-})(jQuery);
